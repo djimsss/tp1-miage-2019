@@ -20,7 +20,7 @@ public class MailReaderModule extends AbstractModule {
 	protected void configure() {
 
 		if (production) {
-			//TODO
+			
 		} else {
 			//TODO
 

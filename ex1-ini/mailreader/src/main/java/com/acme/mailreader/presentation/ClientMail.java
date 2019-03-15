@@ -6,7 +6,9 @@ public class ClientMail {
 
 	public static void main(String[] args) {
 		
-	 production = Boolean.parseBoolean(args[0]);
+		production = Boolean.parseBoolean(args[0]);
+		CommandLineInterpretor client = new CommandLineInterpretor();
+		client.nouveauMail(args);
 		
 	}
 }

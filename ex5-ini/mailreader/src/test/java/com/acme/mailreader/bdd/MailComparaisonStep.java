@@ -1,5 +1,7 @@
 package com.acme.mailreader.bdd;
 
+import static org.junit.Assert.assertThat;
+
 import java.time.Instant;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -13,6 +15,7 @@ import com.acme.mailreader.domain.MailComparator;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import static org.hamcrest.core.Is.is;
 
 /**
  * Les steps (actions) du test
@@ -53,13 +56,12 @@ public class MailComparaisonStep {
 
 	@When("^je trie$")
 	public void je_trie() throws Throwable {
-		//TODO
+		resultatComparaison = resuAsString.get(comparator.compare(mail1, mail2));
 	}
 
 	@Then("^le tri doit retourner \"([^\"]*)\"$")
 	public void le_tri_doit_retourner(String resu) throws Throwable {
-		//TODO
-		//assertThat(...);
+		assertThat(resu, is(resultatComparaison));
 	}
 	
 
